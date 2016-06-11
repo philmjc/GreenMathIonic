@@ -1,0 +1,19 @@
+
+<ion-view view-title="Courses">
+  <ion-content>
+    <ion-list ng-controller="CoursesController as corsCtr">
+      <ion-item ng-repeat="course in corsCtr.courses | filter:{cat: filtText}" class="item-thumbnail-left">
+        <img ng-src="{{baseURL+course.img}}">
+        <h2>{{course.name}}</h2>
+          <span style="font-size:75%">{{course.price | currency}}</span>
+          <span class="badge badge-assertive">{{course.label}}</span>
+        <p>{{course.descr}}</p>
+        <button class="button" role="button" ng-click="corsCtr.enroll(course)">
+          <i class="fa fa fa-pencil-square-o"></i> Enrol</button>
+        <ion-option-button class="button-assertive icon ion-plus-circled"
+            ng-click="corsCtr.enroll(course)">
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

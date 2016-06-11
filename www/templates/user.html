@@ -1,0 +1,17 @@
+<ion-view view-title="User">
+  <ion-content>
+    <ion-list ng-controller="UserController as uCtr">
+      <ion-item ng-repeat="course in uCtr.courses" href="#/app/cor/{{course._id}}" class="item-thumbnail-left">
+        <img ng-src="{{baseURL+course.img}}">
+        <h2>{{course.name}}</h2>
+        <button ng-click="openChallenge(course._id)" class="button button-small button-balanced"
+         role="button">Go To Course <i class="fa fa-hand-o-right"></i></i></button>
+         <!--button ng-click="openHelp()" class="button button-small button-balanced"
+          role="button">Help <i class="fa fa-question-circle"></i></button-->
+        <ion-option-button class="button-assertive icon ion-plus-circled"
+            ng-click="addFavorite(course.id)">
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

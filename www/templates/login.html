@@ -1,0 +1,32 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <h5 ng-click="aCtr.claim()">{{aCtr.user.newUser || aCtr.user.freeMode ? 'Already Registered? ' : 'Not Registered Yet? '}}
+        <a href="">{{aCtr.user.newUser || aCtr.user.freeMode ? ' SIGN IN here. ' : ' Please REGISTER '}}</a></h5>
+    <form ng-controller="AuthController as aCtr" ng-submit="aCtr.register()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="aCtr.user.username" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="aCtr.user.password" required>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">
+            {{aCtr.user.newUser || aCtr.user.freeMode ? 'Register' : 'Sign In'}}</button>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit"ng-click="aCtr.skip()">
+            Skip Sign Up and use Trial Mode</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeHelp()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content ng-controller="HelpController as hCtr">
+    <h3>Sorry About That!</h3>
+    <ion-list>
+      <ion-item ng-click="hCtr.initCs()">
+        Click here to view the courses.
+      </ion-item>
+      <ion-item ng-click="hCtr.recover()">
+        Click here to go straight to the trial.
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>
